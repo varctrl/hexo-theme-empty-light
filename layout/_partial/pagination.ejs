@@ -1,0 +1,10 @@
+<!-- 分页 -->
+<div id="fenye" class="container has-text-centered">
+    <% if(page.prev){%>
+    <a  class="button is-rounded is-outlined is-black" href="<%- config.root %><%- page.prev_link %>"><%= theme.prev %></a>
+    <% }%>
+    <% if(page.next){%>
+    <a  class="button is-rounded is-outlined is-black" href="<%- config.root  %><%- page.next_link %>"><%= theme.next %></a>
+    <%}%>
+</div>
+<div style="height:30px;"></div>

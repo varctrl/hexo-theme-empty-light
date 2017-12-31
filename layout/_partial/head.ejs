@@ -1,0 +1,35 @@
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="<%=config.description %>" />
+<% var icon_url = theme.icon_url %>
+<link rel="shortcut icon" href="<%=icon_url%>">
+
+<%
+var title = config.title;
+if(is_post()) {
+title = page.title;
+}
+if(is_archive())
+{
+     title = "Archive";
+
+ if(is_month()){
+  title =+ ":"+page.year+"/"+page.month;
+  }
+  else if(is_year()){
+    title =+ ":"+page.year;
+    }
+} else if(is_tag()){
+  title = "Tags:"+page.tag;
+} else if(is_category()){
+  title = "Category:"+page.category;
+}
+ %>
+<title> <%=title%></title>
+
+
+<%- css('css/bulma.css') %>
+<%- css('css/font-awesome.min.css') %>
+    <%- css('css/base.css')%>

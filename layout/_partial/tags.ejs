@@ -1,0 +1,12 @@
+
+<%
+var pageTags = [];
+tags.forEach(function(taga){
+    x='<a class="taga" href="' + url_for(taga.path) + '">' + (tagHash ? ' \t&nbsp;#' : '') + taga.name + '</a>'
+    pageTags.push(x);
+});
+%>
+
+<%- pageTags.join(' ') %>
+
+

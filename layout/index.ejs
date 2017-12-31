@@ -1,0 +1,65 @@
+<style>
+
+     #mark a {
+        color: #1abc9c !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+   #mark a:active,#mark a:hover {
+        outline-width: 0;
+        border-bottom-color: #555 !important;
+        color: #555 !important;
+        text-decoration: none !important;
+    }
+   body {
+       font-family:"Book Antiqua", Palatino, serif;
+   }
+
+    #section {
+margin: 35px auto;
+max-width: 960px;
+
+}
+
+    #readmore {
+        margin-top: 7.5px;
+        margin-left: 840px;
+        margin-bottom: -5px;
+
+    }
+    h2#title {
+line-height: 20px;
+    }
+    </style>
+<div id="index">
+  <% page.posts.each(function(item){ %>
+
+<section class="container" id="section">
+    <!-- title -->
+<h2  align="center" id="title" class="message-header">
+  <div  class="has-text-centered"><%= item.title %></div>
+    <p>
+        <%= item.date.format(config.date_format) %>
+    </p>
+</h2>
+<!-- Content -->
+        <div class="message-body">
+            <div id="mark"><%- item.excerpt || item.content %></div>
+          <% if (item.excerpt) { %>
+
+
+            <!-- dividing line -->
+              <hr size="3px" style="background-color: #E1E1E1;">
+              <a id="readmore" class="button is-black is-rounded is-small is-outlined is-focused" href="<%- config.root %><%- item.path %>"><%= theme.excerpt_link %></a>
+
+                  <% };%>
+        </div>
+
+</section>
+
+
+<% }); %>
+    <!-- 分页 pagination-->
+<%- partial('_partial/pagination')%>
+</div>

@@ -1,0 +1,36 @@
+<style>
+    html,body {
+        background: white;
+    }
+    #archtitle {
+        margin-top: 35px;
+        font-size: 25px;
+        color: #1abc9c;
+    }
+    #arch
+          {
+        margin-bottom: 20px;
+    }
+   #archtit {
+        color: #1abc9c !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+  #archtit:active, #archtit:hover {
+        outline-width: 0;
+        border-bottom-color: #555 !important;
+        color: #555 !important;
+        text-decoration: none !important;
+    }
+</style>
+<section id="arch" class="container has-text-centered ">
+
+<!--title-->
+    <h2 id="archtitle">
+        <a id="archtit" href="<%=config.root%><%=item.path%>"><%=item.title%></a>
+    </h2>
+    <!--date and author-->
+    <strong id="archdate"><p>Posted on <%= item.date.format(config.date_format)%></p>
+    </strong>
+    </section>

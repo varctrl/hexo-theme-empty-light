@@ -1,0 +1,19 @@
+#Navbar
+#导航栏
+menu:
+   Home: /
+   Email: mailto:admin@varctrl.me
+   Project: https://github.com/varctrl/
+   Archive: /archives
+   About: /about
+#icon 16*16px
+#网站的小图标
+icon_url: https://t1.picb.cc/uploads/2017/12/17/BnwnK.jpg
+#Read More
+#“阅读更多”
+excerpt_link: Read More
+#分页
+prev: Previous
+next: Next
+#gitment评论系统
+#gitment comment system

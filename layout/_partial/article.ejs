@@ -1,0 +1,68 @@
+<%- css('css/highlight.css')%>
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+    #postsec {
+        clear: left;
+    }
+
+
+
+    .details {
+        float: left;
+        padding-left: 10px;
+        font-size: 18px;
+
+    }
+    div > span {
+       margin-left: 0px;
+      margin-top: 0px;
+    }
+</style>
+<section id="post_section" class="container markdown-body" >
+
+    <!--title,date,tags-->
+    <h2 id="hidden">
+        <%- item.title || item.link %>
+    </h2>
+
+    <section class="desec">
+
+        <% if(item.tags && item.tags.length){ %>
+
+        <div class="tags">
+        <span class="tag is-medium is-light is-rounded">
+        <%- partial('tags', {tags: item.tags, tagHash: true}) %>
+        </span>
+        </div>
+        <% } %>
+    </section>
+
+
+    <!-- content -->
+    <section id="postsec"><%- item.content %>
+    </section>
+
+
+</section>
+<script>var title = document.getElementById("hidden");
+    title.style.display = "none";
+    sitetitle = document.getElementById("sitetitle");
+    titlev = title.childNodes[0].nodeValue;
+    sitetitle.innerHTML = titlev;
+    shadow = document.getElementById("shadow");
+    shadow.style.visibility = "hidden";
+</script>
+<!-- 评论系统-->
+

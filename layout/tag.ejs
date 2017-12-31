@@ -1,0 +1,38 @@
+
+<style>
+    html,body {
+        background: white;
+    }
+    #tagtitle {
+        margin-top: 35px;
+        font-size: 25px;
+        color: #1abc9c;
+    }
+    #maintag
+    {
+        margin-bottom: 20px;
+    }
+    #taglink {
+        color: #1abc9c !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    #taglink:active, #taglink:hover {
+        outline-width: 0;
+        border-bottom-color: #555 !important;
+        color: #555 !important;
+        text-decoration: none !important;
+    }
+</style>
+<section id="maintag" class="container has-text-centered ">
+<% page.posts.each(function(post){ %>
+    <!--title-->
+    <h2 id="tagtitle">
+        <a id="taglink" href="<%=config.root%><%=post.path%>"><%=post.title%></a>
+    </h2>
+    <!--date and author-->
+    <strong id="tagdate"><p>Posted on  <%= post.date.format('YYYY-MM-DD') %></p>
+    </strong>
+    <% })%>
+</section>
