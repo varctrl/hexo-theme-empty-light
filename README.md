@@ -30,5 +30,9 @@ pagination_dir: page
 ```
 icon_url: your_favicon_url(16*16px)
 ```
+### 创建About界面
+```
+hexo new page "about"
+```
 ## Change Log
 ####  V1.0.0 OK
